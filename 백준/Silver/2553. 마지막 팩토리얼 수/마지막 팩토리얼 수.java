@@ -8,7 +8,9 @@ class Main {
             factoSum *= j;
             while (factoSum % 10 == 0)
                 factoSum /= 10;
-            factoSum %= 1000000000;
+          if(factoSum>=1000000000) {
+          factoSum %= 1000000000;
+          }
 
         }
         return factoSum;
@@ -18,7 +20,7 @@ class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         long factoN = facto(n);
-        
+
         while (true) {
             if (factoN % 10 != 0) {
                 System.out.printf("%d", factoN % 10);
@@ -30,5 +32,5 @@ class Main {
 
     }
 }
-        
-                
+
+
