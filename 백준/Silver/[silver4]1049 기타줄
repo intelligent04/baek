@@ -1,0 +1,15 @@
+import math
+#패키지로만 샀을때, 낱개로만 샀을때, 패키지를 살짝 모자라게사고 낱개로도 샀을때 뭐가 더 싼지 출력
+n,m = map(int,(input().split()))
+p = math.ceil(n/6)
+alist = []
+blist = []
+
+for i in range(m):#a가 패키지 b가 단일
+    a,b = map(int,(input().split()))
+    alist.append(a)
+    blist.append(b)
+
+alist.sort()
+blist.sort()
+print(min(min(alist[0]*p,blist[0]*n),alist[0]*(p-1)+blist[0]*(n-(p-1)*6)))
