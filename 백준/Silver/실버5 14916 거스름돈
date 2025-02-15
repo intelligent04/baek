@@ -1,0 +1,26 @@
+n, m = map(int, input().split())
+a = []
+b = []
+c = []
+for _ in range(n):
+    temp = list(map(int, input().split()))
+    a.append(temp)
+
+m, k = map(int, input().split())
+
+for _ in range(m):
+    temp = list(map(int, input().split()))
+    b.append(temp)
+
+for i in range(n):
+    hitemp = []
+    for j in range(k):
+        temp = []
+        for p in range(m):
+            temp.append(a[i][p] * b[p][j])
+        hitemp.append(sum(temp))
+    c.append(hitemp)
+for i in c:
+    for j in i:
+        print(j,end=" ")
+    print()
